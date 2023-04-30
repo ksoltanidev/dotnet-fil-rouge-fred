@@ -1,11 +1,17 @@
+.TaskListContainer {
+    width: 0;
+    height: 100%;
+    flex-grow: 1;
+}
+
 .TaskList {
+    height: 100%;
     display: flex;
     flex-direction: column;
     border-radius: 1rem;
     padding: 1rem;
+    box-sizing: border-box;
     border: solid #85586F 1px;
-    min-height: 70vh;
-    min-width: 20vw;
     position: relative;
     background-color: #DFD3C3;
 }

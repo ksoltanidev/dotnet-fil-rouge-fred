@@ -14,7 +14,7 @@ const Navbar = () => {
     const dispatch = useDispatch()
 
     return (
-        <div >
+        <>
             <BrowserRouter>
                 <div className='Navbar'>
                     <Link to="/home"><img src="/logo-trallo.jpg" alt="Logo Trallo" className='logo' /></Link>
@@ -33,18 +33,20 @@ const Navbar = () => {
                         : <button className='button2' onClick={() => { dispatch(disconnectMember()) }}>Se déconnecter</button>
                     }
                 </div>
-                <Routes>
-                    <Route path='/projects' element={<ProjectsView projects={projects} />}></Route>
-                    <Route path='/members' element={<MembersView />}></Route>
-                    <Route path='/login' element={<LoginView />}></Route>
-                    <Route path='/signup' element={<SignupView />}></Route>
-                    <Route path='/*' element={<ProjectsView projects={projects} />}></Route>
-                </Routes>
+                <div className='pageContainer'>
+                    <Routes>
+                        <Route path='/projects' element={<ProjectsView projects={projects} />}></Route>
+                        <Route path='/members' element={<MembersView />}></Route>
+                        <Route path='/login' element={<LoginView />}></Route>
+                        <Route path='/signup' element={<SignupView />}></Route>
+                        <Route path='/*' element={<ProjectsView projects={projects} />}></Route>
+                    </Routes>
+                </div>
                 <div>
                     <Outlet />
                 </div>
             </BrowserRouter >
-        </div >
+        </>
     );
 };
 

@@ -1,4 +1,8 @@
 .ProjectsView {
     display: flex;
     flex-direction: row;
+    box-sizing: border-box;
+    height: 100%;
+    gap: 2rem;
+    padding: 1rem;
 }

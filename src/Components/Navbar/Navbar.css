@@ -11,6 +11,12 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: white;
 }
+
+.pageContainer {
+    height: 0;
+    flex-grow: 1;
+}
+
 a {
     text-decoration: none;
     color: inherit;

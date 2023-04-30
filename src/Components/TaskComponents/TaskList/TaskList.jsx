@@ -15,13 +15,15 @@ const TaskList = ({ name, status, project }) => {
     const [taskBoxDisplay, setTaskBoxDisplay] = useState(false)
     const tasks = getTasksByStatus(project.tasks, status)
     return (
-        <div className='TaskList'>
-            <h3 className='TaskList-title'>{name}</h3>
-            {tasks.map((task) => {
-                return <Task key={task.task_id} task={task} status={status} />
-            })}
-            <FontAwesomeIcon className='TaskList-icon' icon={faPlus} onClick={() => { setTaskBoxDisplay(true) }} />
-            {taskBoxDisplay ? <TaskBox status={status} type={'create'} setTaskBoxDisplay={setTaskBoxDisplay} /> : undefined}
+        <div className='TaskListContainer'>
+            <div className='TaskList'>
+                <h3 className='TaskList-title'>{name}</h3>
+                {tasks.map((task) => {
+                    return <Task key={task.task_id} task={task} status={status} />
+                })}
+                <FontAwesomeIcon className='TaskList-icon' icon={faPlus} onClick={() => { setTaskBoxDisplay(true) }} />
+                {taskBoxDisplay ? <TaskBox status={status} type={'create'} setTaskBoxDisplay={setTaskBoxDisplay} /> : undefined}
+            </div>
         </div>
     );
 };
